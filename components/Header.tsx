@@ -3,6 +3,7 @@ import { ModeToggle } from './ModeToggle';
 import { BookMarkedIcon, SwatchBook } from 'lucide-react';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import { Button } from './ui/button';
+import SearchInput from './SearchInput';
 
 const Header = () => {
   return (
@@ -15,6 +16,8 @@ const Header = () => {
               <SwatchBook />
               <span className="uppercase">Kdemy Academy</span>
             </Link>
+
+            <SearchInput />
           </div>
 
           {/* Right  */}
@@ -36,7 +39,7 @@ const Header = () => {
             </SignedIn>
 
             <SignedOut>
-              <SignInButton>
+              <SignInButton mode="modal">
                 <Button variant="outline">Sign In</Button>
               </SignInButton>
             </SignedOut>
